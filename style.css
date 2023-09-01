@@ -1,7 +1,7 @@
 #snake-field{
     display: inline-block;
 }
-#snake-renew, #snake-start, #snake-speed{
+#snake-renew, #snake-start, #snake-speed-medium, #snake-speed-hard{
     width: 150px;
     padding: 15px;
     font-size: 30px;

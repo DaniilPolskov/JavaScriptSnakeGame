@@ -1,6 +1,6 @@
 var FIELD_SIZE_X = 20;
 var FIELD_SIZE_Y = 20;
-var SNAKE_SPEED = 300;
+var SNAKE_SPEED = 200;
 var snake = [];
 var direction = 'y+';
 var gameIsRunning = false;
@@ -12,20 +12,17 @@ function init() {
     prepareGameField();
 
     var wrap = document.getElementsByClassName('wrap')[0];
-
     wrap.style.width = '400px';
 
     document.getElementById('snake-start').addEventListener('click', startGame);
     document.getElementById('snake-renew').addEventListener('click', refreshGame);
-    document.getElementById('snake-speed').addEventListener('click', changeSpeedMedium);
-    document.getElementById('snake-speed').addEventListener('click', changeSpeedHard);
-
+    document.getElementById('snake-speed-medium').addEventListener('click', changeSpeedMedium);
+    document.getElementById('snake-speed-hard').addEventListener('click', changeSpeedHard);
 
     addEventListener('keydown', changeDirection);
 }
 
 function prepareGameField() {
-
     var game_table = document.createElement('table');
     game_table.setAttribute('class', 'game-table');
 
@@ -41,9 +38,11 @@ function prepareGameField() {
         }
         game_table.appendChild(row);
     }
-    
+
     document.getElementById('snake-field').appendChild(game_table);
 }
+
+
 
 function startGame() {
     gameIsRunning = true;
@@ -68,11 +67,11 @@ function respawn() {
 }
 
 function changeSpeedMedium() {
-    SNAKE_SPEED = 100
+    SNAKE_SPEED = 95;
 }
 
 function changeSpeedHard() {
-    SNAKE_SPEED = 60
+    SNAKE_SPEED = 50;
 }
 
 
